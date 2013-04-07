@@ -5,6 +5,19 @@
   <%= @case.title %>
 </p>
 
+<section>
+  <ol>
+    <% @case.updates.order('created_at DESC').each do |u| %>
+    <li>
+      <article>
+	<header><%= u.title %></header>
+	<footer>Posted on <%= u.created_at %></footer>
+	<div><%= u.text %></div>
+      </article>
+    </li>
+    <% end %>
+  </ol>
+</section>
 
 <%= link_to 'Edit', edit_case_path(@case) %> |
 <%= link_to 'Back', cases_path %>

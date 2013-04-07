@@ -1,4 +1,7 @@
 Apolo::Application.routes.draw do
+  resources :updates
+  resources :cases
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

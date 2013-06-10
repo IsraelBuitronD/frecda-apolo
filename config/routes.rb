@@ -2,6 +2,8 @@ Apolo::Application.routes.draw do
   resources :updates
   resources :cases
 
+  match "/auth/:provider/callback" => "sessions#create"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

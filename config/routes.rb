@@ -1,4 +1,6 @@
 Apolo::Application.routes.draw do
+  get "user/profile"
+
   resources :updates
   resources :cases
 

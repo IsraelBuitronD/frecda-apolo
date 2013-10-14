@@ -18,6 +18,12 @@
 
     <div class="container">
       <%= render partial: "layouts/navigator" %>
+      <% if flash[:notice] %>
+      <div class="alert alert-warning">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<%= flash[:notice] %>
+      </div>
+      <% end %>
 
       <%= yield %>
 

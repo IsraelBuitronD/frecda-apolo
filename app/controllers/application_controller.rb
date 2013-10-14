@@ -6,4 +6,11 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def require_auth
+    if current_user.nil?
+      flash[:notice] = 'Please sign in'
+      redirect_to :back
+    end
+  end
 end

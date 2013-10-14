@@ -1,4 +1,6 @@
 class CasesController < ApplicationController
+  before_filter :require_auth, except: [:index, :show]
+
   # GET /cases
   # GET /cases.json
   def index

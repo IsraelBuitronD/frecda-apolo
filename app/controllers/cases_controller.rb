@@ -48,6 +48,7 @@ class CasesController < ApplicationController
     @case = Case.new(params[:case])
     @update = @case.updates.new(params[:update])
     @update.title = @case.title
+    @update.user = current_user
 
     respond_to do |format|
       if @case.save

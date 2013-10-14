@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth["provider"]
       user.facebook_uid = auth["uid"]
+      user.firstname = auth["info"]['first_name']
     end
   end
 

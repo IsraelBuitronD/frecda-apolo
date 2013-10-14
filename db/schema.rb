@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610175844) do
+ActiveRecord::Schema.define(:version => 20131014015220) do
 
   create_table "cases", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130610175844) do
     t.string   "facebook_uid"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "firstname"
   end
 
 end

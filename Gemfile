@@ -39,3 +39,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'omniauth-facebook'
+gem 'bootstrap-sass-rails'
+gem 'carrierwave'
+gem 'activeadmin'
+gem 'thin'

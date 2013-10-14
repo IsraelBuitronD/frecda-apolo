@@ -11,7 +11,7 @@
     <li>
       <article>
 	<header><%= u.title %></header>
-	<footer>Posted on <%= u.created_at %></footer>
+	<footer>Posted by <%= u.user.firstname %> on <%= u.created_at %></footer>
 	<div><%= u.text %></div>
       </article>
     </li>

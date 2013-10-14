@@ -1,5 +1,7 @@
 class CasesController < ApplicationController
+
   before_filter :require_auth, except: [:index, :show]
+  layout 'welcome'
 
   # GET /cases
   # GET /cases.json
@@ -27,6 +29,7 @@ class CasesController < ApplicationController
   # GET /cases/new.json
   def new
     @case = Case.new
+    @update = @case.updates.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +46,8 @@ class CasesController < ApplicationController
   # POST /cases.json
   def create
     @case = Case.new(params[:case])
+    @update = @case.updates.new(params[:update])
+    @update.title = @case.title
 
     respond_to do |format|
       if @case.save

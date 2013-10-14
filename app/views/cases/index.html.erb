@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th></th>
     <th>Title</th>
     <th></th>
     <th></th>
@@ -10,6 +11,13 @@
 
 <% @cases.each do |c| %>
   <tr>
+    <td>
+      <%- if c.updates.last.updated_at > 3.days.ago %>
+      <span class="label label-primary">New</span>
+      <%- else %>
+      &nbsp;
+      <%- end %>
+    </td>
     <td><%= c.title %></td>
     <td><%= link_to 'Show', c %></td>
     <td><%= link_to 'Edit', edit_case_path(c) %></td>

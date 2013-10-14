@@ -1,0 +1,6 @@
+.gitignore
+.env
+*~
+log/
+tmp/
+db/*.sqlite*
